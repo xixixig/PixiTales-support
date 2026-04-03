@@ -65,6 +65,65 @@
             margin-bottom: 6px;
         }
 
+        .lang-switch {
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid #E5E5EA;
+            border-radius: 12px;
+            padding: 10px 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .lang-switch label {
+            display: block;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .lang-switch select {
+            width: 180px;
+            height: 34px;
+            border-radius: 10px;
+            border: 1px solid #D1D1D6;
+            background: #fff;
+            padding: 0 10px;
+            font-size: 14px;
+            color: #111;
+            outline: none;
+        }
+
+        .lang-section {
+            scroll-margin-top: 72px;
+            display: none;
+        }
+
+        .lang-section.is-active {
+            display: block;
+        }
+
+        .lang-tag {
+            display: inline-block;
+            font-size: 12px;
+            color: #444;
+            background: #F2F2F7;
+            border: 1px solid #E5E5EA;
+            border-radius: 999px;
+            padding: 4px 10px;
+            margin: 26px 0 8px;
+        }
+
+        .lang-divider {
+            border: none;
+            border-top: 1px solid #E5E5EA;
+            margin: 28px 0;
+            display: none;
+        }
+
         @media (max-width: 480px) {
             .legal-content {
                 padding: 20px 14px 32px;
@@ -77,45 +136,514 @@
     </style>
 </head>
 <body>
+    <div class="lang-switch">
+        <label for="languageSelector">Language</label>
+        <select id="languageSelector">
+            <option value="en-US">en-US (English)</option>
+            <option value="zh-Hans">zh-Hans (简体中文)</option>
+            <option value="ja-JP">ja-JP (日本語)</option>
+            <option value="es-ES">es-ES (Español)</option>
+            <option value="de-DE">de-DE (Deutsch)</option>
+            <option value="fr-FR">fr-FR (Français)</option>
+            <option value="pt-BR">pt-BR (Português)</option>
+            <option value="ko-KR">ko-KR (한국어)</option>
+            <option value="zh-Hant">zh-Hant (繁體中文)</option>
+        </select>
+    </div>
     <div class="legal-container">
         <div class="legal-content">
-            <h1 class="legal-title">Privacy Policy</h1>
-            <p class="legal-meta">Last Updated: January 26, 2026</p>
+            <section id="lang-en-US" class="lang-section is-active" lang="en">
+                <div class="lang-tag">en-US</div>
+                <h1 class="legal-title">Privacy Policy</h1>
+                <p class="legal-meta">Last Updated: March 17, 2026</p>
 
-            <h2 class="legal-heading">1. INTRODUCTION</h2>
-            <p class="legal-text">PixiTales (“we,” “our,” or “us”) provides an AI-powered storybook generation platform. This Privacy Policy explains how we collect and use your information when you register and use our services. We comply with global data protection standards, including the Personal Data (Privacy) Ordinance (PDPO) of Hong Kong, as well as relevant principles of GDPR, COPPA, and APPI.</p>
+                <h2 class="legal-heading">1. INTRODUCTION</h2>
+                <p class="legal-text">PixiTales ("we," "our," or "us") provides an AI-powered storybook generation platform. This Privacy Policy explains how we collect and use your information when you register and use our services. We comply with global data protection standards, including the Personal Data (Privacy) Ordinance (PDPO) of Hong Kong, as well as relevant principles of GDPR, COPPA, and APPI.</p>
 
-            <h2 class="legal-heading">2. DATA WE COLLECT</h2>
-            <p class="legal-text">To provide our services, we only collect the following minimal information:</p>
-            <ul class="legal-list">
-                <li>Account Information: Email address and username provided during registration.</li>
-                <li>User-Generated Content: Text prompts and AI-generated stories/images saved to your account.</li>
-                <li>Technical Data: IP address and device identifiers for security and performance monitoring.</li>
-            </ul>
+                <h2 class="legal-heading">2. DATA WE COLLECT</h2>
+                <p class="legal-text">To provide our services, we only collect the following minimal information:</p>
+                <ul class="legal-list">
+                    <li>Account Information: Email address and username provided during registration.</li>
+                    <li>User-Generated Content: Text prompts and AI-generated stories/images saved to your account.</li>
+                    <li>Technical Data: IP address and device identifiers for security and performance monitoring.</li>
+                </ul>
 
-            <h2 class="legal-heading">3. AGE REQUIREMENTS & PARENTAL CONSENT</h2>
-            <p class="legal-text">While our App does not specifically request the age of its users, our content is designed for families.</p>
-            <ul class="legal-list">
-                <li>Under 18: If you are under the age of 18 (or the age of majority in your jurisdiction), you must only use this App with the involvement and consent of a parent or legal guardian.</li>
-                <li>Parental Control: We encourage parents to supervise their children's digital activities. If we learn that we have inadvertently collected personal data from a child without parental consent, we will delete that information immediately.</li>
-            </ul>
+                <h2 class="legal-heading">3. DEVICE PERMISSIONS &amp; MEDIA ACCESS</h2>
+                <ul class="legal-list">
+                    <li>Photo Library/Camera Access: With your permission, our App may access your device's photo library or camera. This access is strictly limited to two purposes: (a) allowing you to upload reference images for AI image modification features, and (b) saving generated images or storybooks directly to your device.</li>
+                    <li>No Retention Policy: We do not permanently store, use for training, or share the images you upload from your device. They are processed temporarily and securely solely for generating the requested modifications.</li>
+                    <li>User Responsibility: To protect your privacy, we strongly advise against uploading images that contain sensitive personal information, identifiable faces of minors, or confidential data. You assume full responsibility for the content of the images you choose to upload.</li>
+                </ul>
 
-            <h2 class="legal-heading">4. HOW WE USE YOUR DATA</h2>
-            <ul class="legal-list">
-                <li>To manage your account and provide access to your generated stories.</li>
-                <li>To communicate with you regarding updates or support.</li>
-                <li>AI Processing: Your prompts are processed by third-party AI providers (e.g., OpenAI). We do not sell your personal data to third parties.</li>
-            </ul>
+                <h2 class="legal-heading">4. AGE REQUIREMENTS &amp; PARENTAL CONSENT</h2>
+                <p class="legal-text">While our App does not specifically request the age of its users, our content is designed for families.</p>
+                <ul class="legal-list">
+                    <li>Under 18: If you are under the age of 18 (or the age of majority in your jurisdiction), you must only use this App with the involvement and consent of a parent or legal guardian.</li>
+                    <li>Parental Control: We encourage parents to supervise their children's digital activities. If we learn that we have inadvertently collected personal data from a child without parental consent, we will delete that information immediately.</li>
+                </ul>
 
-            <h2 class="legal-heading">5. INTERNATIONAL DATA TRANSFERS</h2>
-            <p class="legal-text">As a global service, your data (Email, Username) may be stored on servers located outside of Hong Kong (e.g., Singapore). By using the service, you consent to this cross-border transfer, and we ensure your data remains protected under standard contractual clauses.</p>
+                <h2 class="legal-heading">5. HOW WE USE YOUR DATA</h2>
+                <ul class="legal-list">
+                    <li>To manage your account and provide access to your generated stories.</li>
+                    <li>To communicate with you regarding updates or support.</li>
+                    <li>AI Processing: Your prompts are processed by third-party AI providers (e.g., OpenAI). We do not sell your personal data to third parties.</li>
+                </ul>
 
-            <h2 class="legal-heading">6. DATA RETENTION & YOUR RIGHTS</h2>
-            <p class="legal-text">You have the right to access, update, or delete your account information at any time through the App settings. In accordance with the Hong Kong PDPO and other regional laws, you may also request a copy of your data or withdrawal of consent by contacting us.</p>
+                <h2 class="legal-heading">6. INTERNATIONAL DATA TRANSFERS</h2>
+                <p class="legal-text">As a global service, your data (Email, Username) may be stored on servers located outside of Hong Kong (e.g., Singapore). By using the service, you consent to this cross-border transfer, and we ensure your data remains protected under standard contractual clauses.</p>
 
-            <h2 class="legal-heading">7. CONTACT US</h2>
-            <p class="legal-text">If you have questions about your privacy, please contact us at: xiaojie_gao@hkcsai.com.</p>
+                <h2 class="legal-heading">7. DATA RETENTION &amp; YOUR RIGHTS</h2>
+                <p class="legal-text">You have the right to access, update, or delete your account information at any time through the App settings. In accordance with the Hong Kong PDPO and other regional laws, you may also request a copy of your data or withdrawal of consent by contacting us.</p>
+
+                <h2 class="legal-heading">8. CONTACT US</h2>
+                <p class="legal-text">If you have questions about your privacy, please contact us at: xiaojie_gao@hkcsai.com.</p>
+            </section>
+
+            <hr class="lang-divider" />
+
+            <section id="lang-zh-Hans" class="lang-section" lang="zh-Hans">
+                <div class="lang-tag">zh-Hans</div>
+                <h1 class="legal-title">隐私政策</h1>
+                <p class="legal-meta">最后更新：2026年3月17日</p>
+
+                <h2 class="legal-heading">1. 引言</h2>
+                <p class="legal-text">PixiTales（“我们”）提供 AI 驱动的绘本生成平台。本隐私政策说明你在注册与使用服务时，我们如何收集与使用你的信息。我们遵循全球数据保护标准，包括香港《个人资料（私隐）条例》（PDPO），以及 GDPR、COPPA、APPI 等相关原则。</p>
+
+                <h2 class="legal-heading">2. 我们收集的数据</h2>
+                <p class="legal-text">为提供服务，我们仅收集以下最少必要信息：</p>
+                <ul class="legal-list">
+                    <li>账户信息：注册时提供的邮箱地址与用户名。</li>
+                    <li>用户生成内容：你保存到账号中的文本提示词以及 AI 生成的故事/图片。</li>
+                    <li>技术数据：用于安全与性能监测的 IP 地址与设备标识符。</li>
+                </ul>
+
+                <h2 class="legal-heading">3. 设备权限与媒体访问</h2>
+                <ul class="legal-list">
+                    <li>相册/相机访问：在你授权后，本应用可能访问你的设备相册或相机。该访问严格限定于两种用途：(a) 允许你上传参考图片用于 AI 图片修改功能；(b) 将生成的图片或绘本保存到你的设备。</li>
+                    <li>不留存政策：我们不会长期存储、用于训练或分享你从设备上传的图片。这些图片仅会被临时且安全地处理，用于生成你请求的修改结果。</li>
+                    <li>用户责任：为保护你的隐私，我们强烈建议不要上传包含敏感个人信息、可识别未成年人面部或机密数据的图片。你需对所选择上传的图片内容承担全部责任。</li>
+                </ul>
+
+                <h2 class="legal-heading">4. 年龄要求与家长同意</h2>
+                <p class="legal-text">尽管本应用不会专门要求用户提供年龄信息，但我们的内容面向家庭用户。</p>
+                <ul class="legal-list">
+                    <li>未满 18 岁：如果你未满 18 岁（或你所在司法辖区的法定成年年龄），你必须在父母或法定监护人的参与与同意下使用本应用。</li>
+                    <li>家长监护：我们鼓励家长监督孩子的数字活动。如我们发现未经家长同意而收集了儿童个人数据，我们将立即删除相关信息。</li>
+                </ul>
+
+                <h2 class="legal-heading">5. 我们如何使用你的数据</h2>
+                <ul class="legal-list">
+                    <li>用于管理你的账号，并向你提供访问已生成故事的能力。</li>
+                    <li>用于与你沟通产品更新或提供支持。</li>
+                    <li>AI 处理：你的提示词将由第三方 AI 服务提供商（例如 OpenAI）处理。我们不会向第三方出售你的个人数据。</li>
+                </ul>
+
+                <h2 class="legal-heading">6. 跨境数据传输</h2>
+                <p class="legal-text">作为全球化服务，你的数据（邮箱、用户名）可能存储在香港以外的服务器上（例如新加坡）。当你使用本服务，即表示你同意该跨境传输。我们将通过标准合同条款等方式确保你的数据得到保护。</p>
+
+                <h2 class="legal-heading">7. 数据保留与你的权利</h2>
+                <p class="legal-text">你可随时在应用设置中访问、更新或删除你的账户信息。依据香港 PDPO 及其他地区法律，你也可以通过联系我们请求获取你的数据副本或撤回同意。</p>
+
+                <h2 class="legal-heading">8. 联系我们</h2>
+                <p class="legal-text">如你对隐私有任何疑问，请通过以下邮箱联系我们：xiaojie_gao@hkcsai.com。</p>
+            </section>
+
+            <hr class="lang-divider" />
+
+            <section id="lang-ja-JP" class="lang-section" lang="ja">
+                <div class="lang-tag">ja-JP</div>
+                <h1 class="legal-title">プライバシーポリシー</h1>
+                <p class="legal-meta">最終更新日：2026年3月17日</p>
+
+                <h2 class="legal-heading">1. はじめに</h2>
+                <p class="legal-text">PixiTales（「当社」）は、AI を活用した絵本生成プラットフォームを提供します。本プライバシーポリシーは、登録およびサービス利用時に当社がどのように情報を収集・利用するかを説明します。当社は香港の Personal Data (Privacy) Ordinance（PDPO）を含むグローバルなデータ保護基準、ならびに GDPR、COPPA、APPI の関連原則に準拠します。</p>
+
+                <h2 class="legal-heading">2. 収集するデータ</h2>
+                <p class="legal-text">当社はサービス提供のため、以下の最小限の情報のみを収集します。</p>
+                <ul class="legal-list">
+                    <li>アカウント情報：登録時に提供されるメールアドレスおよびユーザー名。</li>
+                    <li>ユーザー生成コンテンツ：テキストプロンプトおよびアカウントに保存された AI 生成のストーリー／画像。</li>
+                    <li>技術データ：セキュリティおよびパフォーマンス監視のための IP アドレスおよび端末識別子。</li>
+                </ul>
+
+                <h2 class="legal-heading">3. デバイス権限とメディアアクセス</h2>
+                <ul class="legal-list">
+                    <li>写真ライブラリ／カメラへのアクセス：あなたの許可により、アプリは端末の写真ライブラリまたはカメラにアクセスする場合があります。このアクセスは次の 2 目的に限定されます：(a) AI 画像修正機能のために参照画像をアップロードできるようにすること、(b) 生成した画像または絵本を端末へ直接保存すること。</li>
+                    <li>非保持ポリシー：当社は、あなたの端末からアップロードされた画像を恒久的に保存したり、学習に使用したり、共有したりしません。これらは要求された修正を生成するために一時的かつ安全に処理されます。</li>
+                    <li>ユーザー責任：プライバシー保護のため、機微な個人情報、未成年者の識別可能な顔、または機密データを含む画像のアップロードは避けることを強く推奨します。アップロードする画像の内容については、あなたが全責任を負います。</li>
+                </ul>
+
+                <h2 class="legal-heading">4. 年齢要件と保護者の同意</h2>
+                <p class="legal-text">当社のアプリはユーザーの年齢を特別に要求しませんが、コンテンツは家族向けに設計されています。</p>
+                <ul class="legal-list">
+                    <li>18 歳未満：あなたが 18 歳未満（または居住地で定められた成年年齢未満）の場合、保護者または法定後見人の関与と同意のもとでのみ本アプリを利用してください。</li>
+                    <li>保護者による管理：当社は保護者が子どものデジタル活動を監督することを推奨します。保護者の同意なく児童の個人データを誤って収集したことが判明した場合、当社は直ちに当該情報を削除します。</li>
+                </ul>
+
+                <h2 class="legal-heading">5. データの利用目的</h2>
+                <ul class="legal-list">
+                    <li>アカウント管理および生成したストーリーへのアクセス提供のため。</li>
+                    <li>更新情報やサポートに関する連絡のため。</li>
+                    <li>AI 処理：あなたのプロンプトは第三者の AI 事業者（例：OpenAI）により処理されます。当社は個人データを第三者へ販売しません。</li>
+                </ul>
+
+                <h2 class="legal-heading">6. 国際的なデータ移転</h2>
+                <p class="legal-text">グローバルサービスとして、あなたのデータ（メールアドレス、ユーザー名）は香港外（例：シンガポール）にあるサーバーに保存される場合があります。本サービスの利用により、あなたはこの越境移転に同意したものとみなされ、当社は標準契約条項等によりデータ保護を確保します。</p>
+
+                <h2 class="legal-heading">7. データ保持とあなたの権利</h2>
+                <p class="legal-text">あなたはアプリ設定からいつでもアカウント情報にアクセス、更新、削除する権利があります。香港 PDPO および他地域の法令に基づき、当社へ連絡することでデータの写しの請求や同意の撤回を行うこともできます。</p>
+
+                <h2 class="legal-heading">8. お問い合わせ</h2>
+                <p class="legal-text">プライバシーに関するご質問は、以下までご連絡ください：xiaojie_gao@hkcsai.com。</p>
+            </section>
+
+            <hr class="lang-divider" />
+
+            <section id="lang-es-ES" class="lang-section" lang="es">
+                <div class="lang-tag">es-ES</div>
+                <h1 class="legal-title">Política de privacidad</h1>
+                <p class="legal-meta">Última actualización: 17 de marzo de 2026</p>
+
+                <h2 class="legal-heading">1. INTRODUCCIÓN</h2>
+                <p class="legal-text">PixiTales ("nosotros", "nuestro" o "nos") ofrece una plataforma de generación de cuentos ilustrados impulsada por IA. Esta Política de privacidad explica cómo recopilamos y utilizamos tu información cuando te registras y usas nuestros servicios. Cumplimos con estándares globales de protección de datos, incluida la Personal Data (Privacy) Ordinance (PDPO) de Hong Kong, así como principios relevantes de GDPR, COPPA y APPI.</p>
+
+                <h2 class="legal-heading">2. DATOS QUE RECOPILAMOS</h2>
+                <p class="legal-text">Para prestar nuestros servicios, solo recopilamos la siguiente información mínima:</p>
+                <ul class="legal-list">
+                    <li>Información de la cuenta: dirección de correo electrónico y nombre de usuario proporcionados durante el registro.</li>
+                    <li>Contenido generado por el usuario: indicaciones de texto y cuentos/imágenes generados por IA guardados en tu cuenta.</li>
+                    <li>Datos técnicos: dirección IP e identificadores del dispositivo para monitoreo de seguridad y rendimiento.</li>
+                </ul>
+
+                <h2 class="legal-heading">3. PERMISOS DEL DISPOSITIVO Y ACCESO A MEDIOS</h2>
+                <ul class="legal-list">
+                    <li>Acceso a fotos/cámara: Con tu permiso, la app puede acceder a la biblioteca de fotos o cámara de tu dispositivo. Este acceso se limita estrictamente a dos fines: (a) permitirte subir imágenes de referencia para funciones de modificación de imágenes por IA y (b) guardar imágenes o cuentos ilustrados generados directamente en tu dispositivo.</li>
+                    <li>Política de no retención: No almacenamos permanentemente, no usamos para entrenamiento ni compartimos las imágenes que subes desde tu dispositivo. Se procesan temporalmente y de forma segura únicamente para generar las modificaciones solicitadas.</li>
+                    <li>Responsabilidad del usuario: Para proteger tu privacidad, recomendamos encarecidamente no subir imágenes que contengan información personal sensible, rostros identificables de menores o datos confidenciales. Asumes plena responsabilidad por el contenido de las imágenes que eliges subir.</li>
+                </ul>
+
+                <h2 class="legal-heading">4. REQUISITOS DE EDAD Y CONSENTIMIENTO PARENTAL</h2>
+                <p class="legal-text">Aunque nuestra app no solicita específicamente la edad de sus usuarios, nuestro contenido está diseñado para familias.</p>
+                <ul class="legal-list">
+                    <li>Menores de 18: Si tienes menos de 18 años (o la mayoría de edad en tu jurisdicción), solo debes usar esta app con la participación y el consentimiento de un padre, madre o tutor legal.</li>
+                    <li>Control parental: Animamos a los padres a supervisar las actividades digitales de sus hijos. Si descubrimos que hemos recopilado inadvertidamente datos personales de un menor sin consentimiento parental, eliminaremos esa información de inmediato.</li>
+                </ul>
+
+                <h2 class="legal-heading">5. CÓMO USAMOS TUS DATOS</h2>
+                <ul class="legal-list">
+                    <li>Para gestionar tu cuenta y proporcionarte acceso a tus historias generadas.</li>
+                    <li>Para comunicarnos contigo sobre actualizaciones o soporte.</li>
+                    <li>Procesamiento de IA: Tus indicaciones se procesan por proveedores de IA de terceros (p. ej., OpenAI). No vendemos tus datos personales a terceros.</li>
+                </ul>
+
+                <h2 class="legal-heading">6. TRANSFERENCIAS INTERNACIONALES DE DATOS</h2>
+                <p class="legal-text">Como servicio global, tus datos (correo electrónico, nombre de usuario) pueden almacenarse en servidores ubicados fuera de Hong Kong (p. ej., Singapur). Al usar el servicio, aceptas esta transferencia transfronteriza y garantizamos que tus datos permanezcan protegidos mediante cláusulas contractuales estándar.</p>
+
+                <h2 class="legal-heading">7. CONSERVACIÓN DE DATOS Y TUS DERECHOS</h2>
+                <p class="legal-text">Tienes derecho a acceder, actualizar o eliminar la información de tu cuenta en cualquier momento desde los ajustes de la app. De acuerdo con el PDPO de Hong Kong y otras leyes regionales, también puedes solicitar una copia de tus datos o retirar tu consentimiento poniéndote en contacto con nosotros.</p>
+
+                <h2 class="legal-heading">8. CONTACTO</h2>
+                <p class="legal-text">Si tienes preguntas sobre tu privacidad, contáctanos en: xiaojie_gao@hkcsai.com.</p>
+            </section>
+
+            <hr class="lang-divider" />
+
+            <section id="lang-de-DE" class="lang-section" lang="de">
+                <div class="lang-tag">de-DE</div>
+                <h1 class="legal-title">Datenschutzrichtlinie</h1>
+                <p class="legal-meta">Zuletzt aktualisiert: 17. März 2026</p>
+
+                <h2 class="legal-heading">1. EINLEITUNG</h2>
+                <p class="legal-text">PixiTales ("wir", "uns" oder "unser") bietet eine KI-gestützte Plattform zur Erstellung von Bilderbüchern. Diese Datenschutzrichtlinie erläutert, wie wir Ihre Informationen erfassen und verwenden, wenn Sie sich registrieren und unsere Dienste nutzen. Wir halten globale Datenschutzstandards ein, einschließlich der Personal Data (Privacy) Ordinance (PDPO) von Hongkong sowie relevanter Grundsätze der DSGVO, COPPA und APPI.</p>
+
+                <h2 class="legal-heading">2. DATEN, DIE WIR ERFASSEN</h2>
+                <p class="legal-text">Um unsere Dienste bereitzustellen, erfassen wir nur die folgenden minimalen Informationen:</p>
+                <ul class="legal-list">
+                    <li>Kontoinformationen: E-Mail-Adresse und Benutzername, die bei der Registrierung angegeben werden.</li>
+                    <li>Nutzergenerierte Inhalte: Texteingaben sowie KI-generierte Geschichten/Bilder, die in Ihrem Konto gespeichert werden.</li>
+                    <li>Technische Daten: IP-Adresse und Gerätekennungen zur Sicherheits- und Leistungsüberwachung.</li>
+                </ul>
+
+                <h2 class="legal-heading">3. GERÄTEBERECHTIGUNGEN &amp; MEDIENZUGRIFF</h2>
+                <ul class="legal-list">
+                    <li>Zugriff auf Fotos/Kamera: Mit Ihrer Zustimmung kann die App auf die Fotomediathek oder Kamera Ihres Geräts zugreifen. Dieser Zugriff ist strikt auf zwei Zwecke beschränkt: (a) das Hochladen von Referenzbildern für KI-Bildbearbeitungsfunktionen und (b) das Speichern generierter Bilder oder Bilderbücher direkt auf Ihrem Gerät.</li>
+                    <li>Keine dauerhafte Speicherung: Wir speichern, nutzen zu Trainingszwecken oder teilen die von Ihrem Gerät hochgeladenen Bilder nicht dauerhaft. Sie werden nur vorübergehend und sicher verarbeitet, um die angeforderten Änderungen zu generieren.</li>
+                    <li>Verantwortung der Nutzer: Zum Schutz Ihrer Privatsphäre raten wir dringend davon ab, Bilder hochzuladen, die sensible personenbezogene Informationen, identifizierbare Gesichter von Minderjährigen oder vertrauliche Daten enthalten. Sie tragen die volle Verantwortung für die Inhalte der Bilder, die Sie hochladen.</li>
+                </ul>
+
+                <h2 class="legal-heading">4. ALTERSVORGABEN &amp; EINWILLIGUNG DER ELTERN</h2>
+                <p class="legal-text">Obwohl unsere App nicht gezielt nach dem Alter ihrer Nutzer fragt, sind unsere Inhalte für Familien konzipiert.</p>
+                <ul class="legal-list">
+                    <li>Unter 18: Wenn Sie unter 18 Jahre alt sind (oder unter dem Volljährigkeitsalter in Ihrer Rechtsordnung), dürfen Sie diese App nur mit Beteiligung und Zustimmung eines Elternteils oder gesetzlichen Vertreters nutzen.</li>
+                    <li>Elterliche Aufsicht: Wir ermutigen Eltern, die digitalen Aktivitäten ihrer Kinder zu beaufsichtigen. Wenn wir feststellen, dass wir versehentlich personenbezogene Daten eines Kindes ohne elterliche Zustimmung erfasst haben, werden wir diese Informationen umgehend löschen.</li>
+                </ul>
+
+                <h2 class="legal-heading">5. WIE WIR IHRE DATEN VERWENDEN</h2>
+                <ul class="legal-list">
+                    <li>Zur Verwaltung Ihres Kontos und um Ihnen Zugriff auf Ihre generierten Geschichten zu ermöglichen.</li>
+                    <li>Zur Kommunikation mit Ihnen über Updates oder Support.</li>
+                    <li>KI-Verarbeitung: Ihre Eingaben werden von Drittanbietern von KI-Diensten (z. B. OpenAI) verarbeitet. Wir verkaufen Ihre personenbezogenen Daten nicht an Dritte.</li>
+                </ul>
+
+                <h2 class="legal-heading">6. INTERNATIONALE DATENÜBERMITTLUNGEN</h2>
+                <p class="legal-text">Als globaler Dienst können Ihre Daten (E-Mail, Benutzername) auf Servern außerhalb Hongkongs gespeichert werden (z. B. in Singapur). Durch die Nutzung des Dienstes stimmen Sie dieser grenzüberschreitenden Übermittlung zu, und wir stellen durch Standardvertragsklauseln sicher, dass Ihre Daten geschützt bleiben.</p>
+
+                <h2 class="legal-heading">7. DATENAUFBEWAHRUNG &amp; IHRE RECHTE</h2>
+                <p class="legal-text">Sie haben das Recht, Ihre Kontoinformationen jederzeit über die App-Einstellungen einzusehen, zu aktualisieren oder zu löschen. In Übereinstimmung mit dem PDPO von Hongkong und anderen regionalen Gesetzen können Sie auch eine Kopie Ihrer Daten oder den Widerruf Ihrer Einwilligung verlangen, indem Sie uns kontaktieren.</p>
+
+                <h2 class="legal-heading">8. KONTAKT</h2>
+                <p class="legal-text">Wenn Sie Fragen zu Ihrer Privatsphäre haben, kontaktieren Sie uns bitte unter: xiaojie_gao@hkcsai.com.</p>
+            </section>
+
+            <hr class="lang-divider" />
+
+            <section id="lang-fr-FR" class="lang-section" lang="fr">
+                <div class="lang-tag">fr-FR</div>
+                <h1 class="legal-title">Politique de confidentialité</h1>
+                <p class="legal-meta">Dernière mise à jour : 17 mars 2026</p>
+
+                <h2 class="legal-heading">1. INTRODUCTION</h2>
+                <p class="legal-text">PixiTales ("nous", "notre" ou "nos") propose une plateforme de génération de livres d’histoires assistée par IA. La présente Politique de confidentialité explique comment nous collectons et utilisons vos informations lorsque vous vous inscrivez et utilisez nos services. Nous respectons les normes mondiales de protection des données, notamment la Personal Data (Privacy) Ordinance (PDPO) de Hong Kong, ainsi que les principes pertinents du RGPD, de la COPPA et de l’APPI.</p>
+
+                <h2 class="legal-heading">2. DONNÉES QUE NOUS COLLECTONS</h2>
+                <p class="legal-text">Pour fournir nos services, nous ne collectons que les informations minimales suivantes :</p>
+                <ul class="legal-list">
+                    <li>Informations de compte : adresse e-mail et nom d’utilisateur fournis lors de l’inscription.</li>
+                    <li>Contenu généré par l’utilisateur : invites de texte et histoires/images générées par IA enregistrées dans votre compte.</li>
+                    <li>Données techniques : adresse IP et identifiants de l’appareil à des fins de sécurité et de surveillance des performances.</li>
+                </ul>
+
+                <h2 class="legal-heading">3. AUTORISATIONS DE L’APPAREIL ET ACCÈS AUX MÉDIAS</h2>
+                <ul class="legal-list">
+                    <li>Accès à la photothèque/appareil photo : avec votre autorisation, l’application peut accéder à la photothèque ou à l’appareil photo de votre appareil. Cet accès est strictement limité à deux objectifs : (a) vous permettre de téléverser des images de référence pour les fonctionnalités de modification d’images par IA ; (b) enregistrer les images ou livres générés directement sur votre appareil.</li>
+                    <li>Politique de non-conservation : nous ne stockons pas de façon permanente, n’utilisons pas à des fins d’entraînement et ne partageons pas les images que vous téléversez depuis votre appareil. Elles sont traitées temporairement et de manière sécurisée uniquement pour générer les modifications demandées.</li>
+                    <li>Responsabilité de l’utilisateur : pour protéger votre vie privée, nous vous déconseillons fortement de téléverser des images contenant des informations personnelles sensibles, des visages identifiables de mineurs ou des données confidentielles. Vous assumez l’entière responsabilité du contenu des images que vous choisissez de téléverser.</li>
+                </ul>
+
+                <h2 class="legal-heading">4. EXIGENCES D’ÂGE ET CONSENTEMENT PARENTAL</h2>
+                <p class="legal-text">Bien que notre application ne demande pas spécifiquement l’âge de ses utilisateurs, notre contenu est conçu pour les familles.</p>
+                <ul class="legal-list">
+                    <li>Moins de 18 ans : si vous avez moins de 18 ans (ou l’âge de la majorité dans votre juridiction), vous ne devez utiliser cette application qu’avec l’implication et le consentement d’un parent ou tuteur légal.</li>
+                    <li>Contrôle parental : nous encourageons les parents à superviser les activités numériques de leurs enfants. Si nous apprenons que nous avons collecté par inadvertance des données personnelles d’un enfant sans consentement parental, nous supprimerons immédiatement ces informations.</li>
+                </ul>
+
+                <h2 class="legal-heading">5. COMMENT NOUS UTILISONS VOS DONNÉES</h2>
+                <ul class="legal-list">
+                    <li>Pour gérer votre compte et vous donner accès à vos histoires générées.</li>
+                    <li>Pour communiquer avec vous au sujet des mises à jour ou du support.</li>
+                    <li>Traitement IA : vos invites sont traitées par des fournisseurs d’IA tiers (par ex., OpenAI). Nous ne vendons pas vos données personnelles à des tiers.</li>
+                </ul>
+
+                <h2 class="legal-heading">6. TRANSFERTS INTERNATIONAUX DE DONNÉES</h2>
+                <p class="legal-text">En tant que service mondial, vos données (e-mail, nom d’utilisateur) peuvent être stockées sur des serveurs situés en dehors de Hong Kong (par ex., Singapour). En utilisant le service, vous consentez à ce transfert transfrontalier et nous veillons à ce que vos données restent protégées via des clauses contractuelles types.</p>
+
+                <h2 class="legal-heading">7. CONSERVATION DES DONNÉES ET VOS DROITS</h2>
+                <p class="legal-text">Vous avez le droit d’accéder à vos informations de compte, de les mettre à jour ou de les supprimer à tout moment via les paramètres de l’application. Conformément au PDPO de Hong Kong et à d’autres lois régionales, vous pouvez également demander une copie de vos données ou retirer votre consentement en nous contactant.</p>
+
+                <h2 class="legal-heading">8. NOUS CONTACTER</h2>
+                <p class="legal-text">Si vous avez des questions concernant votre vie privée, veuillez nous contacter à l’adresse : xiaojie_gao@hkcsai.com.</p>
+            </section>
+
+            <hr class="lang-divider" />
+
+            <section id="lang-pt-BR" class="lang-section" lang="pt-BR">
+                <div class="lang-tag">pt-BR</div>
+                <h1 class="legal-title">Política de Privacidade</h1>
+                <p class="legal-meta">Última atualização: 17 de março de 2026</p>
+
+                <h2 class="legal-heading">1. INTRODUÇÃO</h2>
+                <p class="legal-text">O PixiTales ("nós", "nosso" ou "conosco") fornece uma plataforma de geração de livros de histórias com tecnologia de IA. Esta Política de Privacidade explica como coletamos e usamos suas informações quando você se cadastra e utiliza nossos serviços. Cumprimos padrões globais de proteção de dados, incluindo a Personal Data (Privacy) Ordinance (PDPO) de Hong Kong, bem como princípios relevantes do GDPR, COPPA e APPI.</p>
+
+                <h2 class="legal-heading">2. DADOS QUE COLETAMOS</h2>
+                <p class="legal-text">Para fornecer nossos serviços, coletamos apenas as seguintes informações mínimas:</p>
+                <ul class="legal-list">
+                    <li>Informações da conta: endereço de e-mail e nome de usuário fornecidos durante o cadastro.</li>
+                    <li>Conteúdo gerado pelo usuário: prompts de texto e histórias/imagens geradas por IA salvas na sua conta.</li>
+                    <li>Dados técnicos: endereço IP e identificadores do dispositivo para monitoramento de segurança e desempenho.</li>
+                </ul>
+
+                <h2 class="legal-heading">3. PERMISSÕES DO DISPOSITIVO E ACESSO À MÍDIA</h2>
+                <ul class="legal-list">
+                    <li>Acesso à biblioteca de fotos/câmera: com sua permissão, o app pode acessar a biblioteca de fotos ou a câmera do seu dispositivo. Esse acesso é estritamente limitado a dois propósitos: (a) permitir que você envie imagens de referência para recursos de modificação de imagem por IA e (b) salvar imagens ou livros gerados diretamente no seu dispositivo.</li>
+                    <li>Política de não retenção: não armazenamos permanentemente, não usamos para treinamento nem compartilhamos as imagens que você envia do seu dispositivo. Elas são processadas temporariamente e com segurança apenas para gerar as modificações solicitadas.</li>
+                    <li>Responsabilidade do usuário: para proteger sua privacidade, recomendamos fortemente que você não envie imagens que contenham informações pessoais sensíveis, rostos identificáveis de menores ou dados confidenciais. Você assume total responsabilidade pelo conteúdo das imagens que escolher enviar.</li>
+                </ul>
+
+                <h2 class="legal-heading">4. REQUISITOS DE IDADE E CONSENTIMENTO DOS PAIS/RESPONSÁVEIS</h2>
+                <p class="legal-text">Embora nosso app não solicite especificamente a idade de seus usuários, nosso conteúdo foi projetado para famílias.</p>
+                <ul class="legal-list">
+                    <li>Menores de 18: se você tiver menos de 18 anos (ou a maioridade na sua jurisdição), deverá usar este app apenas com o envolvimento e consentimento de um pai/mãe ou responsável legal.</li>
+                    <li>Controle parental: incentivamos os pais a supervisionarem as atividades digitais de seus filhos. Se soubermos que coletamos inadvertidamente dados pessoais de uma criança sem consentimento dos pais, excluiremos essas informações imediatamente.</li>
+                </ul>
+
+                <h2 class="legal-heading">5. COMO USAMOS SEUS DADOS</h2>
+                <ul class="legal-list">
+                    <li>Para gerenciar sua conta e fornecer acesso às histórias que você gerou.</li>
+                    <li>Para nos comunicarmos com você sobre atualizações ou suporte.</li>
+                    <li>Processamento de IA: seus prompts são processados por provedores de IA de terceiros (por exemplo, OpenAI). Não vendemos seus dados pessoais a terceiros.</li>
+                </ul>
+
+                <h2 class="legal-heading">6. TRANSFERÊNCIAS INTERNACIONAIS DE DADOS</h2>
+                <p class="legal-text">Como um serviço global, seus dados (e-mail, nome de usuário) podem ser armazenados em servidores localizados fora de Hong Kong (por exemplo, Singapura). Ao usar o serviço, você consente com essa transferência internacional e garantimos que seus dados permaneçam protegidos por meio de cláusulas contratuais padrão.</p>
+
+                <h2 class="legal-heading">7. RETENÇÃO DE DADOS E SEUS DIREITOS</h2>
+                <p class="legal-text">Você tem o direito de acessar, atualizar ou excluir as informações da sua conta a qualquer momento pelas configurações do app. De acordo com o PDPO de Hong Kong e outras leis regionais, você também pode solicitar uma cópia dos seus dados ou retirar seu consentimento entrando em contato conosco.</p>
+
+                <h2 class="legal-heading">8. CONTATO</h2>
+                <p class="legal-text">Se você tiver dúvidas sobre sua privacidade, entre em contato conosco em: xiaojie_gao@hkcsai.com.</p>
+            </section>
+
+            <hr class="lang-divider" />
+
+            <section id="lang-ko-KR" class="lang-section" lang="ko">
+                <div class="lang-tag">ko-KR</div>
+                <h1 class="legal-title">개인정보 처리방침</h1>
+                <p class="legal-meta">최종 업데이트: 2026년 3월 17일</p>
+
+                <h2 class="legal-heading">1. 소개</h2>
+                <p class="legal-text">PixiTales("당사")는 AI 기반 동화책 생성 플랫폼을 제공합니다. 본 개인정보 처리방침은 귀하가 회원가입 및 서비스를 이용하는 과정에서 당사가 정보를 어떻게 수집하고 사용하는지 설명합니다. 당사는 홍콩의 Personal Data (Privacy) Ordinance(PDPO)를 포함한 글로벌 데이터 보호 기준과 GDPR, COPPA, APPI의 관련 원칙을 준수합니다.</p>
+
+                <h2 class="legal-heading">2. 수집하는 데이터</h2>
+                <p class="legal-text">서비스 제공을 위해 당사는 다음의 최소한의 정보만 수집합니다.</p>
+                <ul class="legal-list">
+                    <li>계정 정보: 회원가입 시 제공한 이메일 주소 및 사용자 이름.</li>
+                    <li>사용자 생성 콘텐츠: 텍스트 프롬프트 및 계정에 저장된 AI 생성 스토리/이미지.</li>
+                    <li>기술 데이터: 보안 및 성능 모니터링을 위한 IP 주소 및 기기 식별자.</li>
+                </ul>
+
+                <h2 class="legal-heading">3. 기기 권한 및 미디어 접근</h2>
+                <ul class="legal-list">
+                    <li>사진 라이브러리/카메라 접근: 귀하의 허용 하에 앱이 기기의 사진 라이브러리 또는 카메라에 접근할 수 있습니다. 이 접근은 (a) AI 이미지 수정 기능을 위한 참고 이미지 업로드와 (b) 생성된 이미지 또는 동화책을 기기에 직접 저장하는 두 가지 목적에 엄격히 한정됩니다.</li>
+                    <li>비보관 정책: 당사는 귀하의 기기에서 업로드한 이미지를 영구적으로 저장하거나 학습에 사용하거나 공유하지 않습니다. 해당 이미지는 요청한 수정 결과를 생성하기 위해서만 일시적이고 안전하게 처리됩니다.</li>
+                    <li>사용자 책임: 개인정보 보호를 위해 민감한 개인정보, 미성년자의 식별 가능한 얼굴, 기밀 데이터가 포함된 이미지는 업로드하지 않을 것을 강력히 권장합니다. 업로드하는 이미지의 내용에 대한 책임은 전적으로 귀하에게 있습니다.</li>
+                </ul>
+
+                <h2 class="legal-heading">4. 연령 요건 및 부모 동의</h2>
+                <p class="legal-text">당사 앱은 사용자의 연령을 별도로 요구하지 않지만, 콘텐츠는 가족을 대상으로 설계되었습니다.</p>
+                <ul class="legal-list">
+                    <li>18세 미만: 귀하가 18세 미만(또는 귀하의 관할권에서 성년 연령 미만)인 경우, 부모 또는 법정대리인의 참여와 동의 하에만 앱을 이용해야 합니다.</li>
+                    <li>부모 통제: 당사는 부모가 자녀의 디지털 활동을 감독할 것을 권장합니다. 부모 동의 없이 아동의 개인정보를 의도치 않게 수집한 사실을 알게 되면, 당사는 해당 정보를 즉시 삭제합니다.</li>
+                </ul>
+
+                <h2 class="legal-heading">5. 데이터 사용 방식</h2>
+                <ul class="legal-list">
+                    <li>계정을 관리하고 생성한 스토리에 접근할 수 있도록 제공하기 위해.</li>
+                    <li>업데이트 또는 지원과 관련해 귀하와 소통하기 위해.</li>
+                    <li>AI 처리: 귀하의 프롬프트는 제3자 AI 제공자(예: OpenAI)에 의해 처리됩니다. 당사는 귀하의 개인정보를 제3자에게 판매하지 않습니다.</li>
+                </ul>
+
+                <h2 class="legal-heading">6. 국제 데이터 이전</h2>
+                <p class="legal-text">글로벌 서비스 특성상 귀하의 데이터(이메일, 사용자 이름)는 홍콩 외 지역(예: 싱가포르)에 위치한 서버에 저장될 수 있습니다. 서비스를 이용함으로써 귀하는 이러한 국외 이전에 동의하게 되며, 당사는 표준 계약 조항 등을 통해 귀하의 데이터가 보호되도록 보장합니다.</p>
+
+                <h2 class="legal-heading">7. 데이터 보관 및 귀하의 권리</h2>
+                <p class="legal-text">귀하는 앱 설정을 통해 언제든지 계정 정보를 열람, 업데이트 또는 삭제할 권리가 있습니다. 홍콩 PDPO 및 기타 지역 법률에 따라, 당사에 연락하여 데이터 사본을 요청하거나 동의를 철회할 수도 있습니다.</p>
+
+                <h2 class="legal-heading">8. 문의</h2>
+                <p class="legal-text">개인정보와 관련한 문의 사항이 있으면 다음으로 연락해 주세요: xiaojie_gao@hkcsai.com.</p>
+            </section>
+
+            <hr class="lang-divider" />
+
+            <section id="lang-zh-Hant" class="lang-section" lang="zh-Hant">
+                <div class="lang-tag">zh-Hant</div>
+                <h1 class="legal-title">隱私政策</h1>
+                <p class="legal-meta">最後更新：2026年3月17日</p>
+
+                <h2 class="legal-heading">1. 前言</h2>
+                <p class="legal-text">PixiTales（「我們」）提供 AI 驅動的繪本生成平台。本隱私政策說明你在註冊與使用服務時，我們如何蒐集與使用你的資訊。我們遵循全球資料保護標準，包括香港《個人資料（私隱）條例》（PDPO），以及 GDPR、COPPA、APPI 等相關原則。</p>
+
+                <h2 class="legal-heading">2. 我們蒐集的資料</h2>
+                <p class="legal-text">為提供服務，我們僅蒐集以下最少必要資訊：</p>
+                <ul class="legal-list">
+                    <li>帳戶資訊：註冊時提供的電子郵件地址與使用者名稱。</li>
+                    <li>使用者生成內容：你保存到帳戶中的文字提示詞以及 AI 生成的故事／圖片。</li>
+                    <li>技術資料：用於安全與效能監測的 IP 位址與裝置識別碼。</li>
+                </ul>
+
+                <h2 class="legal-heading">3. 裝置權限與媒體存取</h2>
+                <ul class="legal-list">
+                    <li>相簿／相機存取：在你授權後，本應用可能存取你的裝置相簿或相機。該存取嚴格限定於兩種用途：(a) 允許你上傳參考圖片用於 AI 圖片修改功能；(b) 將生成的圖片或繪本保存到你的裝置。</li>
+                    <li>不留存政策：我們不會長期儲存、用於訓練或分享你從裝置上傳的圖片。這些圖片僅會被暫時且安全地處理，用於生成你要求的修改結果。</li>
+                    <li>使用者責任：為保護你的隱私，我們強烈建議不要上傳包含敏感個人資訊、可辨識未成年人的臉部或機密資料的圖片。你需對所選擇上傳的圖片內容承擔全部責任。</li>
+                </ul>
+
+                <h2 class="legal-heading">4. 年齡要求與家長同意</h2>
+                <p class="legal-text">儘管本應用不會特別要求使用者提供年齡資訊，但我們的內容面向家庭使用者。</p>
+                <ul class="legal-list">
+                    <li>未滿 18 歲：若你未滿 18 歲（或你所在司法管轄區的法定成年年齡），你必須在父母或法定監護人的參與與同意下使用本應用。</li>
+                    <li>家長監護：我們鼓勵家長監督孩子的數位活動。若我們發現未經家長同意而蒐集了兒童個人資料，我們將立即刪除相關資訊。</li>
+                </ul>
+
+                <h2 class="legal-heading">5. 我們如何使用你的資料</h2>
+                <ul class="legal-list">
+                    <li>用於管理你的帳戶，並向你提供存取已生成故事的能力。</li>
+                    <li>用於與你溝通產品更新或提供支援。</li>
+                    <li>AI 處理：你的提示詞將由第三方 AI 服務供應商（例如 OpenAI）處理。我們不會向第三方出售你的個人資料。</li>
+                </ul>
+
+                <h2 class="legal-heading">6. 跨境資料傳輸</h2>
+                <p class="legal-text">作為全球化服務，你的資料（電子郵件、使用者名稱）可能儲存在香港以外的伺服器上（例如新加坡）。當你使用本服務，即表示你同意該跨境傳輸。我們將透過標準契約條款等方式確保你的資料獲得保護。</p>
+
+                <h2 class="legal-heading">7. 資料保留與你的權利</h2>
+                <p class="legal-text">你可隨時在應用設定中存取、更新或刪除你的帳戶資訊。依據香港 PDPO 及其他地區法律，你也可以透過聯絡我們請求取得你的資料副本或撤回同意。</p>
+
+                <h2 class="legal-heading">8. 聯絡我們</h2>
+                <p class="legal-text">如你對隱私有任何疑問，請透過以下電子郵件聯絡我們：xiaojie_gao@hkcsai.com。</p>
+            </section>
         </div>
     </div>
+
+    <script>
+        (function () {
+            const supported = ['en-US', 'zh-Hans', 'ja-JP', 'es-ES', 'de-DE', 'fr-FR', 'pt-BR', 'ko-KR', 'zh-Hant']
+            const selector = document.getElementById('languageSelector')
+
+            function normalizeLang(input) {
+                if (!input) return null
+                if (supported.includes(input)) return input
+                const lower = String(input).toLowerCase()
+                if (lower.startsWith('zh')) {
+                    if (lower.includes('hant') || lower.includes('tw') || lower.includes('hk') || lower.includes('mo')) return 'zh-Hant'
+                    return 'zh-Hans'
+                }
+                if (lower.startsWith('en')) return 'en-US'
+                if (lower.startsWith('ja')) return 'ja-JP'
+                if (lower.startsWith('ko')) return 'ko-KR'
+                if (lower.startsWith('es')) return 'es-ES'
+                if (lower.startsWith('de')) return 'de-DE'
+                if (lower.startsWith('fr')) return 'fr-FR'
+                if (lower.startsWith('pt')) return 'pt-BR'
+                return null
+            }
+
+            function setActiveLanguage(lang) {
+                const el = document.getElementById('lang-' + lang)
+                if (!el) return
+                const sections = document.querySelectorAll('.lang-section')
+                sections.forEach(function (section) {
+                    const isActive = section === el
+                    section.classList.toggle('is-active', isActive)
+                    section.setAttribute('aria-hidden', isActive ? 'false' : 'true')
+                })
+                document.documentElement.lang = el.getAttribute('lang') || 'en'
+                try { history.replaceState(null, '', '#lang-' + lang) } catch (e) {}
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+
+            selector.addEventListener('change', function (e) {
+                setActiveLanguage(e.target.value)
+            })
+
+            const url = new URL(window.location.href)
+            const fromParam = normalizeLang(url.searchParams.get('lang'))
+            const fromHash = window.location.hash && window.location.hash.startsWith('#lang-')
+                ? normalizeLang(window.location.hash.replace('#lang-', ''))
+                : null
+            const fromNavigator = normalizeLang(navigator.language || '')
+            const initial = fromParam || fromHash || fromNavigator || 'en-US'
+            selector.value = initial
+            setActiveLanguage(initial)
+        })()
+    </script>
 </body>
 </html>
